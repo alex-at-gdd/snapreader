@@ -1,0 +1,24 @@
+.well.sidebar-nav
+  %h4
+    Login
+  =form_for :user, url: login_path, method: :post do |f|
+    .form-group
+      %label Email
+      =f.text_field :email, class: 'form-control'
+    .form-group
+      =f.submit 'GO', class: 'btn btn-success'
+      .btn.btn-default.pull-right{ onclick: '$("#sign-up-block").removeClass("hidden")' }
+        Sign Up
+  %hr
+  #sign-up-block.hidden
+    %h5
+      Sign Up
+    =form_for :user, url: signup_path, method: :post do |f|
+      .form-group
+        %label Name
+        =f.text_field :name, class: 'form-control'
+      .form-group
+        %label Email
+        =f.text_field :email, class: 'form-control'
+      .form-group
+        =f.submit 'WOO HOO', class: 'btn btn-primary'
