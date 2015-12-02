@@ -1,27 +1,10 @@
 %h3
   READY TO GET STUFF?
 .row
-  .col-md-4
+  .col-md-6.col-md-offset-3
     .panel
       .panel-success
         .panel-heading
           Hacker News Stuff
         .panel-body
-          .btn.btn-primary.btn-block
-            YEP
-  .col-md-4
-    .panel
-      .panel-success
-        .panel-heading
-          BBC Stuff
-        .panel-body
-          .btn.btn-primary.btn-block
-            OKAY
-  .col-md-4 
-    .panel
-      .panel-success
-        .panel-heading
-          NY Times Stuff
-        .panel-body
-          .btn.btn-primary.btn-block
-            MEH
+          =link_to "Go", search_path(:news_source_slug => 'hn'), :class => 'btn btn-primary btn-block', :onclick => '$(this).html("OFF WE GO!")'

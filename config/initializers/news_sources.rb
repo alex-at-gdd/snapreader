@@ -1,0 +1,1 @@
+NEWS_SOURCES = YAML.load(File.open(Rails.root.join('config', 'news_sources.yml')))

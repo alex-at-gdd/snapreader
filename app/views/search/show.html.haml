@@ -1,0 +1,15 @@
+%h4
+  =link_to ' <- Back to Main', root_path
+%hr
+
+.panel
+  .panel-default
+    .list-group
+
+      -@articles.each do |article|
+        .list-group-item
+          =article.at_css('a')['href']
+          =link_to "#", class: 'pull-right' do
+            %i.fa.fa-star-o
+            FAVORITE
+

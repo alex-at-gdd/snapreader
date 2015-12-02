@@ -1,0 +1,10 @@
+---
+hn:
+  source: https://news.ycombinator.com/
+  title_class: td:nth-child(3).title
+
+#replicate above format for all of the supported news outlets
+
+# bbc:
+#  source: https://bbc.com/
+#  title_class: .some #selector

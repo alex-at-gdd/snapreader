@@ -10,6 +10,11 @@ Rails.application.routes.draw do
     get '/logout'  => :logout
     resources :users
   end
+
+  namespace :search do
+    get ':news_source_slug' => :show
+  end
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
