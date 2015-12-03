@@ -1,10 +1,13 @@
 class UsersController < ApplicationController
 
   def signup
-    if self.current_user = User.create(user_params)
+    @user = User.new(user_params)
+    if @user.save
+      self.current_user = @user
       redirect_to root_path
     else
-      flash.now[:error] = @user.errors.map{|e| e.to_s}
+      flash[:error] = @user.errors.map{|e| "#{e} is required"}
+      redirect_to root_path
     end
   end
 
