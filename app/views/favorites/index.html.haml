@@ -1,0 +1,14 @@
+%h4
+  =link_to ' <- Back to Main', root_path
+%hr
+.panel
+  .panel-default
+    .list-group
+      - @user.favorites.recent_first.each do |favorite|
+        = link_to favorite.url, class: 'list-group-item' do
+          = favorite.title
+          .pull-right
+            %small
+              %em
+                = "(#{favorite.created_at.strftime("%A, %b %d %Y")})"
+

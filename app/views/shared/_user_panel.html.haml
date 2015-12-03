@@ -10,6 +10,6 @@
       %small
         %em
           None, start favoriting some articles
-    -current_user.favorites.order('created_at DESC').each do |fav|
+    -current_user.favorites.limit(5).recent_first.each do |fav|
       %li
         =link_to fav.title, fav.url, target: "_blank"

@@ -8,6 +8,10 @@ def create
   end
 end
 
+def index
+  @user = current_user
+end
+
 
   private
     def favorite_params

@@ -18,7 +18,6 @@ module Authentication
 
     def forget_me!
       self.current_user = nil
-      cookies.delete(:user_id)
     end
 
 
