@@ -1,10 +1,11 @@
 %h3
   READY TO GET STUFF?
 .row
-  .col-md-6.col-md-offset-3
+  .col-md-4
     .panel
       .panel-success
         .panel-heading
-          Hacker News Stuff
+          Hacker News
         .panel-body
-          =link_to "Go", search_path(:news_source_slug => 'hn'), :class => 'btn btn-primary btn-block', :onclick => '$(this).html("<i class=\'fa fa-spin fa-refresh\'></i>&nbsp;OFF WE GO!")'
+          =link_to "Go", search_path(:news_source_slug => 'hn'), :class => 'btn btn-primary btn-block', :onclick => '$(this).html("<i class=\'fa fa-spin fa-hacker-news\'></i>&nbsp;OFF WE GO!")'
+  

@@ -1,15 +1,11 @@
 %h4
   =link_to ' <- Back to Main', root_path
 %hr
-
 .panel
   .panel-default
     .list-group
-
       -@articles.each do |article|
         .list-group-item
           =link_to article.at_css('a').text, article.at_css('a')['href'], target: "_blank"
-          =link_to "#", class: 'pull-right' do
-            %i.fa.fa-star-o
-            FAVORITE
+          =render partial: 'shared/favorite_link', locals: { url: article.at_css('a')['href'], title: article.at_css('a').text }
 

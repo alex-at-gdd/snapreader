@@ -3,15 +3,13 @@ require 'open-uri'
 
 class Scraper
 
-  attr_reader :url, :data
-
   def initialize(news_source)
     @news_source = news_source
   end
 
-  def get_class_items
+  def get_items
     if @data = data(NEWS_SOURCES[@news_source]['source'])
-      return @data.css(NEWS_SOURCES[@news_source]['title_class'])
+      @data.css(NEWS_SOURCES[@news_source]['title_class'])
     else
       nil
     end
@@ -28,5 +26,9 @@ class Scraper
       end
     end
 
+    def merge_titles_to_urls(titles, urls)
+      #take urls because a title is useless w/o a link
+      Hash[urls.zip titles]
+    end
 
 end

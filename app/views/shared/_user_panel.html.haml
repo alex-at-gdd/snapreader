@@ -6,9 +6,10 @@
   %hr
   %ul.nav.nav-list
     %li.nav-header Recently Favorited Articles
-
-    = 'Start Favoriting Articles' unless current_user.favorites.any?
-
-    -current_user.favorites.each do |fav|
+    -unless current_user.favorites.any?
+      %small
+        %em
+          None, start favoriting some articles
+    -current_user.favorites.order('created_at DESC').each do |fav|
       %li
-        =link_to fav.title, fav.url
+        =link_to fav.title, fav.url, target: "_blank"

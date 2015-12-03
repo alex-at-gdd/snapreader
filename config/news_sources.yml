@@ -1,7 +1,12 @@
 ---
 hn:
-  source: https://news.ycombinator.com/
+  source: https://news.ycombinator.com/newest
   title_class: td:nth-child(3).title
+  link_class: td:nth-child(3).title a
+cnn:
+  source: http://www.cnn.com/
+  title_class: h3 .cd__headline-text
+  link_class: h3.cd__headline a
 
 #replicate above format for all of the supported news outlets
 

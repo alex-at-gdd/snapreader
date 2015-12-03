@@ -8,9 +8,11 @@ Rails.application.routes.draw do
     post "/login"  => :login
     match "/signup" => :signup, :via => [:get, :post]
     get '/logout'  => :logout
-    resources :users
+    resources :users do
+      resources :favorites
+    end
   end
-
+  
   namespace :search do
     get ':news_source_slug' => :show
   end
