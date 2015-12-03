@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   validates_presence_of :email, :name
   
   def self.authenticate(params)
-    where(:email => params['email']).first
+    where(email: params['email']).first
   end
 
 

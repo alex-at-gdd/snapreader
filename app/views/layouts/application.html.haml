@@ -4,7 +4,7 @@
     %meta{:charset => "utf-8"}/
     %meta{:content => "IE=Edge,chrome=1", "http-equiv" => "X-UA-Compatible"}/
     %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
-    %title= content_for?(:title) ? yield(:title) : "Snapreader"
+    %title= content_for?(:title) ? yield(:title) : "SnapReader"
     = csrf_meta_tags
     = stylesheet_link_tag "application", :media => "all"
 
@@ -19,11 +19,11 @@
           %span.icon-bar
           %span.icon-bar
           %span.icon-bar
-        =link_to 'Snapreader', root_path, class: 'navbar-brand'
+        =link_to 'SnapReader', root_path, class: 'navbar-brand'
         %ul.nav.navbar-nav
           -if current_user
             %li
-              =link_to user_favorites_path(current_user) do
+              = link_to user_favorites_path(current_user) do
                 Favorites
     .container
       .row
@@ -32,7 +32,4 @@
           = yield
         .col-lg-3
           #user-panel
-            -if current_user
-              =render partial: 'shared/user_panel'
-            -else
-              =render partial: 'shared/sign_up'
+            = render partial: current_user ? 'shared/user_panel' : 'shared/sign_up'

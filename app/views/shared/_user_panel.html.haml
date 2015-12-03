@@ -6,10 +6,10 @@
   %hr
   %ul.nav.nav-list
     %li.nav-header Recently Favorited Articles
-    -unless current_user.favorites.any?
+    - unless current_user.favorites.any?
       %small
         %em
           None, start favoriting some articles
-    -current_user.favorites.limit(5).recent_first.each do |fav|
+    - current_user.favorites.limit(5).recent_first.each do |fav|
       %li
-        =link_to fav.title, fav.url, target: "_blank"
+        = link_to fav.title, fav.url, target: "_blank"

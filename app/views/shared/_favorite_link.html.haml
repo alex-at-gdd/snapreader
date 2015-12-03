@@ -1,8 +1,8 @@
 -if current_user
-  =link_to user_favorites_path(current_user, favorite: {url: url, title: title} ), method: :post, remote: :true,  class: 'pull-right',onclick: '$(this).find("i").addClass("active")' do
-    %i{:class => 'fa fa-star favorite-link' + (' active' if current_user.favorites_include?(title)).to_s}
+  = link_to user_favorites_path(current_user, favorite: { url: url, title: title } ), method: :post, remote: :true,  class: 'pull-right', onclick: '$(this).find("i").addClass("active")' do
+    %i{class: 'fa fa-star favorite-link' + (' active' if current_user.favorites_include?(title)).to_s}
 
 -else
-  =link_to "#",  class: 'pull-right', onclick: '$("#user-panel .well").addClass("danger").prepend("Please sign in to favorite stuff");' do
+  = link_to "#",  class: 'pull-right', onclick: '$("#user-panel .well").addClass("danger").prepend("Please sign in to favorite stuff");' do
     %i.fa.fa-star-o
     FAVORITE

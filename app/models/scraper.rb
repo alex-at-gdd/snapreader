@@ -25,10 +25,4 @@ class Scraper
         puts ("Failed at #{Time.now}" + "Error: #{ex}" + "URL: " + source)
       end
     end
-
-    def merge_titles_to_urls(titles, urls)
-      #take urls because a title is useless w/o a link
-      Hash[urls.zip titles]
-    end
-
 end

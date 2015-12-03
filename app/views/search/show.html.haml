@@ -1,11 +1,11 @@
 %h4
-  =link_to ' <- Back to Main', root_path
+  = link_to ' <- Back to Main', root_path
 %hr
 .panel
   .panel-default
     .list-group
-      -@articles.each do |article|
+      - @articles.each do |article|
         .list-group-item
-          =link_to nokogiri_escape(article.at_css('a').text), article.at_css('a')['href'], target: "_blank"
-          =render partial: 'shared/favorite_link', locals: { url: article.at_css('a')['href'], title: nokogiri_escape(article.at_css('a').text) }
+          = link_to nokogiri_escape(article.at_css('a').text), article.at_css('a')['href'], target: "_blank"
+          = render partial: 'shared/favorite_link', locals: { url: article.at_css('a')['href'], title: nokogiri_escape(article.at_css('a').text) }
 

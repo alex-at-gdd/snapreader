@@ -7,5 +7,5 @@
         .panel-heading
           Hacker News
         .panel-body
-          =link_to "Go", search_path(:news_source_slug => 'hn'), :class => 'btn btn-primary btn-block', :onclick => '$(this).html("<i class=\'fa fa-hacker-news\'></i>&nbsp;OFF WE GO!")'
+          = link_to "Go", search_path(news_source_slug: 'hn'), class: 'btn btn-primary btn-block', onclick: '$(this).html("<i class=\'fa fa-hacker-news\'></i>&nbsp;OFF WE GO!")'
   
